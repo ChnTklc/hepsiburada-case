@@ -1,0 +1,26 @@
+@import '../../assets/styles/mixins.scss';
+
+.hc-basket {
+	@include center;
+	position: relative;
+	width: 120px;
+	height: 48px;
+	border: $border;
+	border-radius: $border-radius-base;
+	color: $gray;
+	font-size: 17px;
+
+	&__count {
+		@include center;
+		position: absolute;
+		top: -7px;
+		right: -4px;
+		width: 18px;
+		height: 18px;
+		background-color: $orange;
+		color: $white;
+		font-weight: 500;
+		font-size: 12px;
+		border-radius: 100%;
+	}
+}

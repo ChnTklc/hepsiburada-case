@@ -1,0 +1,18 @@
+@import '../../assets/styles/mixins.scss';
+
+.hc-navbar-container {
+	display: flex;
+	justify-content: space-between;
+	height: 96px;
+	width: 100%;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);
+
+	&__logo {
+		margin: 31px 0 0 80px;
+		height: 35px;
+	}
+
+	&__basket {
+		margin: 23px 80px 0 0;
+	}
+}
