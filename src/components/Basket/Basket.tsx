@@ -11,7 +11,7 @@ export interface IBasketProps {
 export default function Basket({ className }: IBasketProps) {
 	const basketItems = useAppSelector((state) => state.basket.items);
 
-	const [showList, setShowList] = useState(true);
+	const [showList, setShowList] = useState(false);
 
 	const onMouseOver = () => {
 		setShowList(true);

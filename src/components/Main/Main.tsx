@@ -1,11 +1,7 @@
 import './Main.scss';
 
 export default function Main() {
-	// const [getProducts, { data, isLoading }] = useGetProductsMutation();
-
-	// useEffect(() => {
-	// 	getProducts({ q: 'asa' });
-	// }, [getProducts]);
+	// const [, { data, isLoading }] = useGetProductsMutation();
 
 	// console.log({ data, isLoading });
 
