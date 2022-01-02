@@ -9,10 +9,12 @@ export interface IBasketProps {
 export default function Basket({ className }: IBasketProps) {
 	const basketItems = useAppSelector((state) => state.basket.items);
 
+	const onBasketClick = () => {};
+
 	return (
-		<div className={classNames(['hc-basket', className])}>
+		<button className={classNames(['hc-basket', className])} type='button' onClick={onBasketClick}>
 			{!!basketItems?.length && <span className='hc-basket__count'>{basketItems.length}</span>}
 			{'Sepetim'}
-		</div>
+		</button>
 	);
 }

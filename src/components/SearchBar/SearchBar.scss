@@ -1,0 +1,27 @@
+@import '../../assets/styles/mixins.scss';
+
+.hc-search-bar {
+	position: relative;
+
+	$iconSize: 18px;
+	$iconLeftMargin: 27px;
+	$inputPadding: 12px;
+
+	&__input {
+		width: 695px;
+		height: 48px;
+		padding-left: $iconLeftMargin + $iconSize + $inputPadding;
+		padding-right: $inputPadding;
+		border: none;
+		border-radius: 100px;
+		background-color: $backgroundGray;
+	}
+
+	&__icon {
+		width: $iconSize;
+		height: $iconSize;
+		position: absolute;
+		top: calc(50% - $iconSize / 2);
+		left: $iconLeftMargin;
+	}
+}
