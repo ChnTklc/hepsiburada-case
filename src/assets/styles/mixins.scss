@@ -5,3 +5,11 @@
 	justify-content: center;
 	align-items: center;
 }
+
+@mixin border($color: $gray) {
+	border: 1px solid $color;
+}
+
+@mixin buttonHover {
+	box-shadow: 0 0 5px $shadowBlack;
+}

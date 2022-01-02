@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IProduct } from '../commons/interfaces';
+import mockProducts from '../../assets/mockProducts.json';
 
 export interface IBasketState {
 	items: IProduct[];
 }
 
 const initialState: IBasketState = {
-	items: []
+	items: mockProducts as IProduct[]
 };
 
 export const basketSlice = createSlice({

@@ -10,7 +10,9 @@ export interface IProduct {
 	id: string;
 	title: string;
 	brand: string;
+	imageURL: string;
+	color: string;
 	price: number;
-	discount: NumberRange;
+	discount?: NumberRange;
 	createdDate: string;
 }

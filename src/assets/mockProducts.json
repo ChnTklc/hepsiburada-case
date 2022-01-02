@@ -1,0 +1,32 @@
+[
+	{
+		"id": "1",
+		"title": "iPhone 11 Lila Cep Telefonu",
+		"brand": "Apple",
+		"color": "Lila",
+		"createdDate": "2022-01-02T19:51:33.906Z",
+		"price": 11000,
+		"discount": 1,
+		"imageURL": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone11-purple-select-2019_GEO_EMEA?wid=940&hei=1112&fmt=png-alpha&.v=1567021766320"
+	},
+	{
+		"id": "2",
+		"title": "iPhone 11 Kırmızı Cep Telefonu",
+		"brand": "Apple",
+		"color": "Kırmızı",
+		"createdDate": "2022-01-02T19:54:52.104Z",
+		"price": 11000,
+		"discount": 1,
+		"imageURL": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone11-red-select-2019_GEO_EMEA?wid=834&hei=1000&fmt=jpeg&qlt=95&.v=1567021767076"
+	},
+	{
+		"id": "3",
+		"title": "iPhone 11 Siyah Cep Telefonu",
+		"brand": "Apple",
+		"color": "Siyah",
+		"createdDate": "2022-01-02T19:55:13.966Z",
+		"price": 11000,
+		"discount": 1,
+		"imageURL": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone11-black-select-2019_GEO_EMEA?wid=940&hei=1112&fmt=png-alpha&.v=1567021766023"
+	}
+]
