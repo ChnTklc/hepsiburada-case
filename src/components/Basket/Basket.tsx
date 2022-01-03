@@ -14,7 +14,7 @@ export default function Basket({ className }: IBasketProps) {
 	const [showList, setShowList] = useState(false);
 
 	const onMouseOver = () => {
-		setShowList(true);
+		setShowList(!!basketItems?.length);
 	};
 
 	return (

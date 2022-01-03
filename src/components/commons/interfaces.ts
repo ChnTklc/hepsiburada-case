@@ -7,7 +7,7 @@ type Mapped<N extends number, Result extends Array<unknown> = []> = Result['leng
 type NumberRange = Mapped<MaxAllowedBoundary>[number];
 
 export interface IProduct {
-	id: string;
+	id: number;
 	title: string;
 	brand: string;
 	imageURL: string;

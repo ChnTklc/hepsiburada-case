@@ -1,22 +1,25 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IProduct } from '../commons/interfaces';
-import mockProducts from '../../assets/mockProducts.json';
 
 export interface IBasketState {
 	items: IProduct[];
 }
 
 const initialState: IBasketState = {
-	items: mockProducts as IProduct[]
+	items: JSON.parse(localStorage.getItem('basketItems') || '[]') as IProduct[]
 };
 
 export const basketSlice = createSlice({
 	name: 'basket',
 	initialState,
 	reducers: {
-		addItem: (state, action: PayloadAction<IProduct>) => void state.items.push(action.payload),
-		removeItem: (state, action: PayloadAction<string>) => {
+		addItem: (state, action: PayloadAction<IProduct>) => {
+			state.items.push(action.payload);
+			localStorage.setItem('basketItems', JSON.stringify(state.items));
+		},
+		removeItem: (state, action: PayloadAction<number>) => {
 			state.items = state.items.filter((item) => item.id !== action.payload);
+			localStorage.setItem('basketItems', JSON.stringify(state.items));
 		}
 	}
 });

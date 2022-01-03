@@ -1,6 +1,6 @@
 [
 	{
-		"id": "1",
+		"id": 1,
 		"title": "iPhone 11 Lila Cep Telefonu",
 		"brand": "Apple",
 		"color": "Lila",
@@ -10,7 +10,7 @@
 		"imageURL": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone11-purple-select-2019_GEO_EMEA?wid=940&hei=1112&fmt=png-alpha&.v=1567021766320"
 	},
 	{
-		"id": "2",
+		"id": 2,
 		"title": "iPhone 11 Kırmızı Cep Telefonu",
 		"brand": "Apple",
 		"color": "Kırmızı",
@@ -20,7 +20,7 @@
 		"imageURL": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone11-red-select-2019_GEO_EMEA?wid=834&hei=1000&fmt=jpeg&qlt=95&.v=1567021767076"
 	},
 	{
-		"id": "3",
+		"id": 3,
 		"title": "iPhone 11 Siyah Cep Telefonu",
 		"brand": "Apple",
 		"color": "Siyah",

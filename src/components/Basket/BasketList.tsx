@@ -12,7 +12,7 @@ export default function BasketList({ className }: IBasketListProps) {
 	const dispatch = useDispatch();
 	const basketItems = useAppSelector((state) => state.basket.items);
 
-	const onItemRemove = (id: string) => {
+	const onItemRemove = (id: number) => {
 		dispatch(removeItem(id));
 	};
 
