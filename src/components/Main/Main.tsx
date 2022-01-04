@@ -33,7 +33,7 @@ export default function Main() {
 	};
 
 	const onSortSelect = ({ target: { value } }: React.ChangeEvent<HTMLSelectElement>) => {
-		setQueryParams((prevParams) => ({ ...prevParams, sort: value as TSort }));
+		setQueryParams((prevParams) => ({ ...prevParams, sort: value !== '-1' ? (value as TSort) : undefined }));
 	};
 
 	const getPaginationNumbers = () => {
@@ -72,8 +72,8 @@ export default function Main() {
 						</div>
 					)}
 				</div>
-				<select className='hc-main__header__sort' value={queryParams?.sort} onChange={onSortSelect}>
-					<option>{'Sıralama'}</option>
+				<select className='hc-main__header__sort' value={queryParams?.sort || -1} onChange={onSortSelect}>
+					<option value='-1'>{'Sıralama'}</option>
 					{Object.entries(sortOptions).map(([key, value]) => (
 						<option key={key} value={key}>
 							{value}

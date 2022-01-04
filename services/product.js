@@ -69,8 +69,8 @@ function get({ q, page = 1, color, brand, sort }) {
 		case 'ZToA':
 			searchedProducts.sort((a, b) => b.title.localeCompare(a.title));
 			break;
-
 		default:
+			searchedProducts.sort((a, b) => new Date(a.createdDate).getTime() - new Date(b.createdDate).getTime());
 			break;
 	}
 
