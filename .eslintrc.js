@@ -60,12 +60,6 @@ module.exports = {
 		eqeqeq: ['error', 'smart'],
 		'id-blacklist': 'error',
 		'id-match': 'error',
-		'max-len': [
-			'error',
-			{
-				code: 120
-			}
-		],
 		'no-duplicate-imports': 'error',
 		'no-eval': 'error',
 		'no-multiple-empty-lines': 'error',
@@ -102,6 +96,7 @@ module.exports = {
 		'react/button-has-type': 'warn',
 		'react/prefer-stateless-function': 'off',
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
-		'jsx-a11y/no-noninteractive-element-to-interactive-role': 'off'
+		'jsx-a11y/no-noninteractive-element-to-interactive-role': 'off',
+		'max-len': 'off'
 	}
 };

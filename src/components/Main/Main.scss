@@ -1,0 +1,127 @@
+@import '../../assets/styles/mixins.scss';
+
+.hc-main {
+	display: flex;
+	flex-direction: column;
+	padding: 16px 80px;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 18px;
+
+		&__titles {
+			display: flex;
+			flex-direction: column;
+
+			&__title {
+				font-size: 28px;
+				color: $boldBlack;
+			}
+
+			&__sub-title {
+				font-size: 15px;
+
+				&__left {
+					color: $gray;
+				}
+			}
+		}
+
+		&__sort {
+			@include center;
+			min-width: 120px;
+			height: 48px;
+			border-radius: $border-radius-base;
+			@include border;
+			color: $gray;
+			font-size: 17px;
+			padding: 8px 20px 8px 8px;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			background-image: url('../../assets/image/down-arrow.svg');
+			background-repeat: no-repeat;
+			background-position-x: 96%;
+			background-position-y: 50%;
+		}
+	}
+
+	&__content {
+		display: flex;
+
+		&__actions {
+			width: 20%;
+			display: flex;
+			flex-direction: column;
+
+			&__item {
+				margin-bottom: 24px;
+
+				&__title {
+					margin-top: 0;
+					margin-bottom: 20px;
+				}
+
+				&__options {
+					display: flex;
+					flex-direction: column;
+
+					&__button {
+						display: flex;
+						background: transparent;
+						border: none;
+						padding: 5px 0;
+
+						&:hover {
+							color: $orange;
+						}
+
+						&--selected {
+							color: $orange;
+						}
+					}
+				}
+			}
+		}
+
+		&__items {
+			width: 80%;
+			display: flex;
+			flex-direction: column;
+
+			&__grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				grid-template-rows: repeat(3, 1fr);
+				grid-column-gap: 14px;
+				grid-row-gap: 21px;
+				margin-bottom: 20px;
+			}
+
+			&__pagination {
+				&__button {
+					width: 33px;
+					height: 33px;
+					background-color: white;
+					border-radius: $border-radius-base * 2;
+					@include border($backgroundGray);
+					margin-right: 6.6px;
+
+					&--active {
+						border-color: $orange;
+						color: $orange;
+					}
+				}
+
+				&__prev {
+					margin-right: 13.2px;
+				}
+
+				&__next {
+					margin-left: 6.6px;
+				}
+			}
+		}
+	}
+}

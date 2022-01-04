@@ -1,5 +1,5 @@
 const products = require('../db/products.json');
-const listPerPage = 12;
+const itemsPerPage = 12;
 
 function getColorsAndBrandsMeta(data) {
 	const colors = {};
@@ -19,11 +19,11 @@ function getColorsAndBrandsMeta(data) {
 		}
 	});
 
-	return { colors, brands };
+	return { colors, brands, total: data.length };
 }
 
-function get({ q, page = 1, color, brand }) {
-	const offset = (page - 1) * listPerPage;
+function get({ q, page = 1, color, brand, sort }) {
+	const offset = (page - 1) * itemsPerPage;
 	let searchedProducts = products;
 
 	if (color) {
@@ -40,9 +40,43 @@ function get({ q, page = 1, color, brand }) {
 
 	const colorsAndBrandsMeta = getColorsAndBrandsMeta(searchedProducts);
 
-	searchedProducts = searchedProducts.slice(offset, offset + listPerPage);
+	switch (sort) {
+		case 'LowToHigh':
+			searchedProducts.sort((a, b) => {
+				const pA = a.discount
+					? Math.round((a.price - a.price * (a.discount / 100) + Number.EPSILON) * 100) / 100
+					: a.price;
+				const pB = b.discount
+					? Math.round((b.price - b.price * (b.discount / 100) + Number.EPSILON) * 100) / 100
+					: b.price;
+				return pA - pB;
+			});
+			break;
+		case 'HighToLow':
+			searchedProducts.sort((a, b) => {
+				const pA = a.discount
+					? Math.round((a.price - a.price * (a.discount / 100) + Number.EPSILON) * 100) / 100
+					: a.price;
+				const pB = b.discount
+					? Math.round((b.price - b.price * (b.discount / 100) + Number.EPSILON) * 100) / 100
+					: b.price;
+				return pB - pA;
+			});
+			break;
+		case 'AToZ':
+			searchedProducts.sort((a, b) => a.title.localeCompare(b.title));
+			break;
+		case 'ZToA':
+			searchedProducts.sort((a, b) => b.title.localeCompare(a.title));
+			break;
 
-	const meta = { q, page, color, brand, ...colorsAndBrandsMeta };
+		default:
+			break;
+	}
+
+	searchedProducts = searchedProducts.slice(offset, offset + itemsPerPage);
+
+	const meta = { q, page, color, brand, itemsPerPage, ...colorsAndBrandsMeta };
 
 	return { data: searchedProducts, meta };
 }
