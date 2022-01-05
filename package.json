@@ -30,6 +30,7 @@
 		"start": "react-scripts start",
 		"start:api": "nodemon server.js",
 		"build": "react-scripts build",
+		"test": "react-scripts test --watchAll=false",
 		"eject": "react-scripts eject",
 		"lint": "tsc --noEmit && eslint src/**/*.ts{,x} -c .eslintrc.js --ignore-path .eslintignore",
 		"format": "eslint --fix src/**/*.ts{,x} -c .eslintrc.js --ignore-path .eslintignore",

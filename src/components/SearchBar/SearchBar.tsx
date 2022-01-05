@@ -7,7 +7,7 @@ import './SearchBar.scss';
 import { setValue } from './searchSlice';
 
 export interface ISearchBarProps {
-	className: string;
+	className?: string;
 }
 
 export default function SearchBar({ className }: ISearchBarProps) {

@@ -5,7 +5,7 @@ import './Basket.scss';
 import BasketList from './BasketList';
 
 export interface IBasketProps {
-	className: string;
+	className?: string;
 }
 
 export default function Basket({ className }: IBasketProps) {
@@ -18,13 +18,18 @@ export default function Basket({ className }: IBasketProps) {
 	};
 
 	return (
-		<div className={classNames(['hc-basket', className])} onMouseLeave={() => setShowList(false)}>
+		<div className={classNames(['hc-basket', className])} onMouseLeave={() => setShowList(false)} role='Basket'>
 			<button
 				className={classNames('hc-basket__button', { 'hc-basket__button--list-shown': showList })}
 				type='button'
 				onMouseOver={onMouseOver}
+				role='BasketButton'
 			>
-				{!!basketItems?.length && <span className='hc-basket__count'>{basketItems.length}</span>}
+				{!!basketItems?.length && (
+					<span className='hc-basket__count' role='BasketItemsCount'>
+						{basketItems.length}
+					</span>
+				)}
 				{'Sepetim'}
 			</button>
 			{showList && <BasketList className='hc-basket__list' />}

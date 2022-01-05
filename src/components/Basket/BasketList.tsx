@@ -17,7 +17,7 @@ export default function BasketList({ className }: IBasketListProps) {
 	};
 
 	return (
-		<ul className={classNames(['hc-basket-list', className])}>
+		<ul className={classNames(['hc-basket-list', className])} role='BasketList'>
 			{basketItems.map(({ id, imageURL, title }) => (
 				<li key={id} className='hc-basket-list__item'>
 					<div className='hc-basket-list__item__image-container'>
