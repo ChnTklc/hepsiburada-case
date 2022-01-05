@@ -1,25 +1,28 @@
 import classNames from 'classnames';
 import { useState } from 'react';
-import { useGetProductsMutation } from '../../app/hcAPI';
+import { useAppDispatch } from '../../app/hooks';
 import searchIcon from '../../assets/image/searchIcon.svg';
 import useDebounce from '../commons/hooks/useDebounce';
 import './SearchBar.scss';
+import { setValue } from './searchSlice';
 
 export interface ISearchBarProps {
 	className: string;
 }
 
 export default function SearchBar({ className }: ISearchBarProps) {
+	const dispatch = useAppDispatch();
 	const [searchValue, setSearchValue] = useState('');
-	const [getProducts] = useGetProductsMutation();
 
 	const debouncedSearch = (searchedText: typeof searchValue) => {
 		if (searchedText?.length >= 2) {
-			getProducts({ q: searchedText });
+			dispatch(setValue(searchedText));
+		} else if (searchedText?.length === 0) {
+			dispatch(setValue(''));
 		}
 	};
 
-	useDebounce(searchValue, debouncedSearch);
+	useDebounce(searchValue, debouncedSearch, 500);
 
 	return (
 		<div className={classNames(['hc-search-bar', className])}>

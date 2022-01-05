@@ -1,5 +1,9 @@
 @import '../assets/styles/mixins.scss';
 
+.app-container {
+	position: relative;
+}
+
 button {
 	cursor: pointer;
 }
