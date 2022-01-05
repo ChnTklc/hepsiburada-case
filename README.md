@@ -32,7 +32,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run lint`
+### `yarn run lint`
 
 Runs the typescript complier just for type checking then runs eslint to check any eslint error exists in files with `.ts(x)` formats. It uses `eslintrc.js`and`.eslintignore` file that you have in root folder (same directory with package.json).
 
