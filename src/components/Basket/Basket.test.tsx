@@ -5,7 +5,7 @@ import { IProduct } from '../commons/interfaces';
 import Basket from './Basket';
 import { addItem, removeItem } from './basketSlice';
 
-test('test basket on hover state', async () => {
+test('test basket on hover state on initial', async () => {
 	render(
 		<Provider store={store}>
 			<Basket />
@@ -24,7 +24,7 @@ test('test basket on hover state', async () => {
 	}
 });
 
-test('test basket on mouse leave', async () => {
+test('test basket on mouse leave on initial', async () => {
 	render(
 		<Provider store={store}>
 			<Basket />
@@ -39,7 +39,7 @@ test('test basket on mouse leave', async () => {
 	expect(basketList).not.toBeInTheDocument();
 });
 
-test('test basket items count existence', async () => {
+test('test basket items count existence on initial', async () => {
 	render(
 		<Provider store={store}>
 			<Basket />
@@ -56,7 +56,7 @@ test('test basket items count existence', async () => {
 	}
 });
 
-test('add item to basket', () => {
+test('add item to basket and check item count exist', () => {
 	render(
 		<Provider store={store}>
 			<Basket />
@@ -82,7 +82,7 @@ test('add item to basket', () => {
 	expect(basketItemsCount).toHaveTextContent('1');
 });
 
-test('remove item to basket', () => {
+test('remove item to basket and check item count disapeared', () => {
 	render(
 		<Provider store={store}>
 			<Basket />
